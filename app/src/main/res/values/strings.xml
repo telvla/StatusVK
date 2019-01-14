@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Статус свободен VK</string>
+    <string name="example">Пример id: 3234512</string>
+    <string name="save_btn">ПРОВЕРИТЬ</string>
+</resources>
