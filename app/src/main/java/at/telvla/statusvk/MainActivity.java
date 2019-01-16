@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //StartAppSDK.init(this, "204312594", false);
+        //StartAppSDK.init(this, "204312594", true);
         setContentView(R.layout.activity_main);
         context = this;
         startService(new Intent(this, PingService.class));
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
                     List<Info> list = response.body();
                     check_code = list.get(1).getCodeCheck();
+                    //Log.i("test_work", "+++++++" + list.get(1).getCodeCheck() + "+++++++" + list.get(1).getStatus() + "+++++++" + list.get(1).getId_vk() + "+++++++" + list.get(1).getOnline());
 
                     if (check_code.equals("200")) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -92,6 +94,10 @@ public class MainActivity extends AppCompatActivity {
                                     "Данные не сохранены! Ошибка!", Toast.LENGTH_SHORT);
                             toast.show();
                         }
+                    } else {
+                        toast = Toast.makeText(getApplicationContext(),
+                                "Данная страница не доступна!", Toast.LENGTH_SHORT);
+                        toast.show();
                     }
                 }
                 @Override
