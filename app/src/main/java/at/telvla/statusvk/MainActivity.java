@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //StartAppSDK.init(this, "204312594", true);
+        StartAppSDK.init(this, "204312594", false);
+
         setContentView(R.layout.activity_main);
         context = this;
         startService(new Intent(this, PingService.class));
