@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        StartAppSDK.init(this, "204312594", false);
+        //StartAppSDK.init(this, "204312594", false);
 
         setContentView(R.layout.activity_main);
         context = this;
